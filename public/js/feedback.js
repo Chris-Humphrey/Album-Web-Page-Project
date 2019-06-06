@@ -1,7 +1,7 @@
 $(function() {
 
-    
-    $.getJSON('feedback')
+    $.getJSON('api', displayData)
+
     $('form').submit((e) =>{
         e.preventDefault();
 
@@ -12,19 +12,19 @@ $(function() {
             comment: $('#comment').val()
         }, displayData);
     });
+    function displayData(feedbackArray) {
+        var html = "";
+    
+        $.each(feedbackArray, (key, feedbackObj) => {
+            html += `<div class="border border-secondary mb-2">`
+            html += `<p><b>Name:</b> ${feedbackObj.name}</p>`;
+            html += `<p><b>Email:</b> ${feedbackObj.email}</p>`;
+            html += `<p><b>Comments:</b> ${feedbackObj.comment}</p>`;
+            html += `</div>`
+        });
+    
+        $('#feedback').html(html);
+    }
 });
 
 
-function displayData(feedbackArray) {
-    let html = "";
-
-    $.each(feedbackArray, (key, feedbackObj) => {
-        html += `<div class="border border-secondary">`
-        html += `<p><b>Name:</b> ${feedbackObj.name}</p>`;
-        html += `<p><b>Email:</b> ${feedbackObj.email}</p>`;
-        html += `<p><b>Comments:</b> ${feedbackObj.comment}</p>`;
-        html += `</div>`
-    });
-
-    $('#feedback').html(html);
-}
