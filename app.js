@@ -15,7 +15,9 @@ app.use((req, res, next) => {
 });
 
 app.use(require('./routes/index'));
+app.use(require('./routes/feedback'));
 app.use(require('./routes/albums'));
+app.use(require('./routes/api'));
 
 
 app.listen(port, ()=>{
