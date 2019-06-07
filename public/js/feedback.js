@@ -11,10 +11,13 @@ $(function() {
             email: $('#email').val(),
             comment: $('#comment').val()
         }, displayData);
+        $('#name').val('');
+        $('#email').val('');
+        $('#comment').val('');
     });
 
     function displayData(feedbackArray) {
-        var html = "";
+        let html = "";
     
         $.each(feedbackArray, (key, feedbackObj) => {
             html += `<div class="border border-secondary p-2 mb-2">`;
@@ -23,8 +26,10 @@ $(function() {
             html += `<p><b>Email: </b> ${feedbackObj.email}</p>`;
             html += `</div>`;
             html += `<div class="d-flex flex-column">`;
-            html += `<p class="flex-column"><b>Comments<br></b> ${feedbackObj.comment}</p>`;
+            html += `<div class="flex-column"><b>Comments<br></b><p class="border border-secondary"> ${feedbackObj.comment}</p></div>`;
             html += `</div>`;
+            // html += `<div class="media-left"><button class="feedback-delete btn btn-xs btn-danger"><span id="' + key + '" class="glyphicon glyphicon-remove"></span></button></div>`;
+            html += `<div><button class="btn btn-xs btn-danger"><i class="far fa-trash-alt"></i><span id="' + key + '" class="glyphicon glyphicon-remove"></span></button></div>`;
             html += `</div>`;
         });
     

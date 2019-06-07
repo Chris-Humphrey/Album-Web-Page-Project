@@ -1,0 +1,55 @@
+<% include partials/template/head.ejs %>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class='display-3 mb-5 text-center'>Chat Room</h1>
+            <form>
+                <div class="form-group">
+    
+                </div>
+                <div class="card border-secondary">
+                    <div class="card-header">
+                        <label><b>Name: </b></label>
+                        <input type="text" class="form-control" id="chat-name" required placeholder="Enter your name"><br>
+                        <label><b>Message:</b></label>
+                        <input type="text" class="form-control" id="chat-msg" required placeholder="Enter your message">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-muted">
+                           Add your message here above...
+                        </p>
+                        <ul id="messages"></ul>
+                    </div>
+                </div>
+                <button class="btn btn-lg btn-outline-secondary w-100">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="flex-container text-center">
+
+    <h1 class='display-3 mb-5'>Chat Room</h1>
+
+    <div class="container border border-secondary mb-5 p-2" id='chat-box'>
+        <ul id="messages" class="h-100"></ul>
+        
+            <form>
+                <div class="input-group">
+                    <input id='m' class="form-control" type='text' placeholder="How can I help you?">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary">Send</button>
+                    </div>
+                </div>
+            </form>
+        
+    </div>
+
+</div> -->
+
+
+
+
+<% include partials/template/foot.ejs %>
